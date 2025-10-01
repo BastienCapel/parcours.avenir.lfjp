@@ -321,7 +321,14 @@
       grouped
     } = useOrientationData(DATA_3E, PHASES_3E);
     const printPage = () => window.print();
-    return /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("header", { className: "mb-6 flex flex-col gap-4 rounded-3xl border border-slate-200 bg-white/70 p-6 shadow-sm md:flex-row md:items-end md:justify-between" }, /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("h3", { className: "text-xl font-semibold tracking-tight" }, "Film annuel de l'orientation \u2014 3e"), /* @__PURE__ */ React.createElement("p", { className: "text-sm text-slate-600" }, "LFJP \xB7 Parcours Avenir \xB7 Ann\xE9e scolaire 2025\u20112026")), /* @__PURE__ */ React.createElement("div", { className: "flex flex-wrap items-center gap-2" }, /* @__PURE__ */ React.createElement("div", { className: "flex items-center gap-2" }, /* @__PURE__ */ React.createElement("label", { className: "text-xs font-semibold uppercase tracking-wide text-slate-500", htmlFor: "view-3e" }, "Vue"), /* @__PURE__ */ React.createElement(
+    return /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("header", { className: "mb-6 flex flex-col gap-4 rounded-3xl border border-slate-200 bg-white/70 p-6 shadow-sm md:flex-row md:items-end md:justify-between" }, /* @__PURE__ */ React.createElement("div", { className: "flex items-start gap-3" }, /* @__PURE__ */ React.createElement("img", {
+      src: "https://i.imgur.com/0YmGlXO.png",
+      alt: "Logo du Lycée Français Jacques Prévert de Saly",
+      className: "h-12 w-auto",
+      loading: "lazy",
+      width: "96",
+      height: "96"
+    }), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("h3", { className: "text-xl font-semibold tracking-tight" }, "Film annuel de l'orientation \u2014 3e"), /* @__PURE__ */ React.createElement("p", { className: "text-sm text-slate-600" }, "LFJP \xB7 Parcours Avenir \xB7 Ann\xE9e scolaire 2025\u20112026"))), /* @__PURE__ */ React.createElement("div", { className: "flex flex-wrap items-center gap-2" }, /* @__PURE__ */ React.createElement("div", { className: "flex items-center gap-2" }, /* @__PURE__ */ React.createElement("label", { className: "text-xs font-semibold uppercase tracking-wide text-slate-500", htmlFor: "view-3e" }, "Vue"), /* @__PURE__ */ React.createElement(
       "select",
       {
         id: "view-3e",
@@ -552,7 +559,14 @@
       grouped
     } = useOrientationData(DATA_2NDE, PHASES_2NDE);
     const printPage = () => window.print();
-    return /* @__PURE__ */ React.createElement("div", { className: "mx-auto max-w-7xl p-6" }, /* @__PURE__ */ React.createElement("header", { className: "mb-6 flex flex-col gap-4 md:flex-row md:items-end md:justify-between" }, /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("h3", { className: "text-2xl font-semibold tracking-tight" }, "Film annuel de l'orientation \u2014 2nde"), /* @__PURE__ */ React.createElement("p", { className: "text-sm text-slate-600" }, "LFJP \xB7 Parcours Avenir \xB7 Ann\xE9e scolaire 2025\u20112026")), /* @__PURE__ */ React.createElement("div", { className: "flex flex-wrap items-center gap-2" }, /* @__PURE__ */ React.createElement("div", { className: "flex items-center gap-2" }, /* @__PURE__ */ React.createElement("label", { className: "text-sm text-slate-600", htmlFor: "view-2nde" }, "Vue"), /* @__PURE__ */ React.createElement(
+    return /* @__PURE__ */ React.createElement("div", { className: "mx-auto max-w-7xl p-6" }, /* @__PURE__ */ React.createElement("header", { className: "mb-6 flex flex-col gap-4 md:flex-row md:items-end md:justify-between" }, /* @__PURE__ */ React.createElement("div", { className: "flex items-start gap-3" }, /* @__PURE__ */ React.createElement("img", {
+      src: "https://i.imgur.com/0YmGlXO.png",
+      alt: "Logo du Lycée Français Jacques Prévert de Saly",
+      className: "h-12 w-auto",
+      loading: "lazy",
+      width: "96",
+      height: "96"
+    }), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("h3", { className: "text-2xl font-semibold tracking-tight" }, "Film annuel de l'orientation \u2014 2nde"), /* @__PURE__ */ React.createElement("p", { className: "text-sm text-slate-600" }, "LFJP \xB7 Parcours Avenir \xB7 Ann\xE9e scolaire 2025\u20112026"))), /* @__PURE__ */ React.createElement("div", { className: "flex flex-wrap items-center gap-2" }, /* @__PURE__ */ React.createElement("div", { className: "flex items-center gap-2" }, /* @__PURE__ */ React.createElement("label", { className: "text-sm text-slate-600", htmlFor: "view-2nde" }, "Vue"), /* @__PURE__ */ React.createElement(
       "select",
       {
         id: "view-2nde",
@@ -732,7 +746,14 @@
       grouped
     } = useOrientationData(DATA_1ERE, PHASES_1ERE);
     const printPage = () => window.print();
-    return /* @__PURE__ */ React.createElement("div", { className: "mx-auto max-w-7xl p-6" }, /* @__PURE__ */ React.createElement("header", { className: "mb-6 flex flex-col gap-4 md:flex-row md:items-end md:justify-between" }, /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("h3", { className: "text-2xl font-semibold tracking-tight" }, "Film annuel de l'orientation \u2014 1\xE8re"), /* @__PURE__ */ React.createElement("p", { className: "text-sm text-slate-600" }, "LFJP \xB7 Parcours Avenir \xB7 Ann\xE9e scolaire 2025\u20112026")), /* @__PURE__ */ React.createElement("div", { className: "flex flex-wrap items-center gap-2" }, /* @__PURE__ */ React.createElement("div", { className: "flex items-center gap-2" }, /* @__PURE__ */ React.createElement("label", { className: "text-sm text-slate-600", htmlFor: "view-1ere" }, "Vue"), /* @__PURE__ */ React.createElement(
+    return /* @__PURE__ */ React.createElement("div", { className: "mx-auto max-w-7xl p-6" }, /* @__PURE__ */ React.createElement("header", { className: "mb-6 flex flex-col gap-4 md:flex-row md:items-end md:justify-between" }, /* @__PURE__ */ React.createElement("div", { className: "flex items-start gap-3" }, /* @__PURE__ */ React.createElement("img", {
+      src: "https://i.imgur.com/0YmGlXO.png",
+      alt: "Logo du Lycée Français Jacques Prévert de Saly",
+      className: "h-12 w-auto",
+      loading: "lazy",
+      width: "96",
+      height: "96"
+    }), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("h3", { className: "text-2xl font-semibold tracking-tight" }, "Film annuel de l'orientation \u2014 1\xE8re"), /* @__PURE__ */ React.createElement("p", { className: "text-sm text-slate-600" }, "LFJP \xB7 Parcours Avenir \xB7 Ann\xE9e scolaire 2025\u20112026"))), /* @__PURE__ */ React.createElement("div", { className: "flex flex-wrap items-center gap-2" }, /* @__PURE__ */ React.createElement("div", { className: "flex items-center gap-2" }, /* @__PURE__ */ React.createElement("label", { className: "text-sm text-slate-600", htmlFor: "view-1ere" }, "Vue"), /* @__PURE__ */ React.createElement(
       "select",
       {
         id: "view-1ere",
@@ -945,7 +966,14 @@
       grouped
     } = useOrientationData(DATA_TERMINALE, PHASES_TERMINALE);
     const printPage = () => window.print();
-    return /* @__PURE__ */ React.createElement("div", { className: "mx-auto max-w-7xl p-6" }, /* @__PURE__ */ React.createElement("header", { className: "mb-6 flex flex-col gap-4 md:flex-row md:items-end md:justify-between" }, /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("h3", { className: "text-2xl font-semibold tracking-tight" }, "Film annuel de l'orientation \u2014 Terminale"), /* @__PURE__ */ React.createElement("p", { className: "text-sm text-slate-600" }, "LFJP \xB7 Parcours Avenir \xB7 Ann\xE9e scolaire 2025\u20112026")), /* @__PURE__ */ React.createElement("div", { className: "flex flex-wrap items-center gap-2" }, /* @__PURE__ */ React.createElement("div", { className: "flex items-center gap-2" }, /* @__PURE__ */ React.createElement("label", { className: "text-sm text-slate-600", htmlFor: "view-terminale" }, "Vue"), /* @__PURE__ */ React.createElement(
+    return /* @__PURE__ */ React.createElement("div", { className: "mx-auto max-w-7xl p-6" }, /* @__PURE__ */ React.createElement("header", { className: "mb-6 flex flex-col gap-4 md:flex-row md:items-end md:justify-between" }, /* @__PURE__ */ React.createElement("div", { className: "flex items-start gap-3" }, /* @__PURE__ */ React.createElement("img", {
+      src: "https://i.imgur.com/0YmGlXO.png",
+      alt: "Logo du Lycée Français Jacques Prévert de Saly",
+      className: "h-12 w-auto",
+      loading: "lazy",
+      width: "96",
+      height: "96"
+    }), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("h3", { className: "text-2xl font-semibold tracking-tight" }, "Film annuel de l'orientation \u2014 Terminale"), /* @__PURE__ */ React.createElement("p", { className: "text-sm text-slate-600" }, "LFJP \xB7 Parcours Avenir \xB7 Ann\xE9e scolaire 2025\u20112026"))), /* @__PURE__ */ React.createElement("div", { className: "flex flex-wrap items-center gap-2" }, /* @__PURE__ */ React.createElement("div", { className: "flex items-center gap-2" }, /* @__PURE__ */ React.createElement("label", { className: "text-sm text-slate-600", htmlFor: "view-terminale" }, "Vue"), /* @__PURE__ */ React.createElement(
       "select",
       {
         id: "view-terminale",
