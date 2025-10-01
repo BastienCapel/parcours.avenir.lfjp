@@ -16,80 +16,133 @@ export function Orientation3e() {
   } = useOrientationData(DATA_3E, PHASES_3E);
 
   const printPage = () => window.print();
+  const totalActions = DATA_3E.length;
+  const phasesCount = PHASES_3E.length;
 
   return (
-    <div>
-      <header className="mb-6 flex flex-col gap-4 rounded-3xl border border-slate-200 bg-white/70 p-6 shadow-sm md:flex-row md:items-end md:justify-between">
-        <div className="flex items-start gap-3">
-          <img
-            src="https://i.imgur.com/0YmGlXO.png"
-            alt="Logo du Lycée Français Jacques Prévert de Saly"
-            className="h-12 w-auto"
-            loading="lazy"
-            width="96"
-            height="96"
-          />
-          <div>
-            <h3 className="text-xl font-semibold tracking-tight">Film annuel de l'orientation — 3e</h3>
-            <p className="text-sm text-slate-600">LFJP · Parcours Avenir · Année scolaire 2025‑2026</p>
+    <div className="mx-auto max-w-7xl space-y-6 p-6">
+      <header className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
+        <div className="bg-gradient-to-r from-indigo-50 via-white to-sky-50 px-6 py-6">
+          <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+            <div className="flex items-start gap-3">
+              <img
+                src="https://i.imgur.com/0YmGlXO.png"
+                alt="Logo du Lycée Français Jacques Prévert de Saly"
+                className="h-14 w-auto"
+                loading="lazy"
+                width="96"
+                height="96"
+              />
+              <div className="space-y-1">
+                <h3 className="text-2xl font-semibold tracking-tight text-slate-900">
+                  Film annuel de l'orientation — 3e
+                </h3>
+                <p className="text-sm text-slate-600">LFJP · Parcours Avenir · Année scolaire 2025‑2026</p>
+                <div className="flex flex-wrap gap-2 text-xs font-medium text-slate-500">
+                  <span className="inline-flex items-center gap-1 rounded-full bg-white/80 px-3 py-1 shadow-sm">
+                    <span className="h-2 w-2 rounded-full bg-indigo-500" aria-hidden="true" />
+                    {phasesCount} phases
+                  </span>
+                  <span className="inline-flex items-center gap-1 rounded-full bg-white/80 px-3 py-1 shadow-sm">
+                    <span className="h-2 w-2 rounded-full bg-sky-500" aria-hidden="true" />
+                    {totalActions} actions planifiées
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div className="rounded-2xl border border-white/60 bg-white/70 px-4 py-3 text-sm text-slate-600 shadow-sm backdrop-blur">
+              <p className="font-medium text-slate-700">Objectif</p>
+              <p className="leading-tight">
+                Naviguez parmi les actions clés pour préparer l'orientation des élèves de troisième tout au long de l'année.
+              </p>
+            </div>
           </div>
         </div>
-        <div className="flex flex-wrap items-center gap-2">
-          <div className="flex items-center gap-2">
-            <label className="text-xs font-semibold uppercase tracking-wide text-slate-500" htmlFor="view-3e">
-              Vue
-            </label>
-            <select
-              id="view-3e"
-              value={view}
-              onChange={(event) => setView(event.target.value)}
-              className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm shadow-sm"
-            >
-              <option value="timeline">Timeline</option>
-              <option value="table">Tableau</option>
-            </select>
+        <div className="border-t border-slate-100 bg-white px-6 py-4">
+          <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-[repeat(3,minmax(0,1fr))_auto]">
+            <div className="flex flex-col gap-1">
+              <label className="text-xs font-semibold uppercase tracking-wide text-slate-500" htmlFor="view-3e">
+                Vue
+              </label>
+              <select
+                id="view-3e"
+                value={view}
+                onChange={(event) => setView(event.target.value)}
+                className="w-full rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm transition focus:border-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-100"
+              >
+                <option value="timeline">Frise chronologique</option>
+                <option value="table">Tableau</option>
+              </select>
+            </div>
+            <div className="flex flex-col gap-1">
+              <label className="text-xs font-semibold uppercase tracking-wide text-slate-500" htmlFor="phase-3e">
+                Phase
+              </label>
+              <select
+                id="phase-3e"
+                value={selectedPhase}
+                onChange={(event) => setSelectedPhase(event.target.value)}
+                className="w-full rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm transition focus:border-sky-400 focus:outline-none focus:ring-2 focus:ring-sky-100"
+              >
+                <option value="all">Toutes</option>
+                {PHASES_3E.map((phase) => (
+                  <option key={phase.key} value={phase.key}>
+                    {phase.key}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div className="flex flex-col gap-1 sm:col-span-2 xl:col-span-1">
+              <label className="text-xs font-semibold uppercase tracking-wide text-slate-500" htmlFor="search-3e">
+                Recherche
+              </label>
+              <div className="relative">
+                <span className="pointer-events-none absolute inset-y-0 left-3 flex items-center text-slate-400">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4">
+                    <path
+                      fillRule="evenodd"
+                      d="M9 3.5a5.5 5.5 0 1 0 3.356 9.9l3.122 3.122a.75.75 0 1 0 1.06-1.06l-3.122-3.123A5.5 5.5 0 0 0 9 3.5Zm-4 5.5a4 4 0 1 1 8 0 4 4 0 0 1-8 0Z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </span>
+                <input
+                  id="search-3e"
+                  type="search"
+                  placeholder="Rechercher une action, une période, un acteur..."
+                  value={query}
+                  onChange={(event) => setQuery(event.target.value)}
+                  className="w-full rounded-xl border border-slate-200 bg-white py-2 pl-9 pr-3 text-sm text-slate-700 shadow-sm transition focus:border-slate-300 focus:outline-none focus:ring-2 focus:ring-slate-100"
+                />
+              </div>
+            </div>
+            <div className="flex flex-col gap-1 sm:col-span-2 xl:col-span-1">
+              <span className="text-xs font-semibold uppercase tracking-wide text-slate-500">Export</span>
+              <button
+                type="button"
+                onClick={printPage}
+                className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-slate-200 bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-300"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4">
+                  <path d="M6 2a2 2 0 0 0-2 2v2h2V4h8v2h2V4a2 2 0 0 0-2-2H6Z" />
+                  <path d="M4 7a2 2 0 0 0-2 2v4h3v3h10v-3h3V9a2 2 0 0 0-2-2H4Zm10 8H6v-4h8v4Z" />
+                </svg>
+                Imprimer / PDF
+              </button>
+            </div>
           </div>
-          <div className="flex items-center gap-2">
-            <label className="text-xs font-semibold uppercase tracking-wide text-slate-500" htmlFor="phase-3e">
-              Phase
-            </label>
-            <select
-              id="phase-3e"
-              value={selectedPhase}
-              onChange={(event) => setSelectedPhase(event.target.value)}
-              className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm shadow-sm"
-            >
-              <option value="all">Toutes</option>
-              {PHASES_3E.map((phase) => (
-                <option key={phase.key} value={phase.key}>
-                  {phase.key}
-                </option>
-              ))}
-            </select>
-          </div>
-          <input
-            type="search"
-            placeholder="Rechercher titre, période, acteurs..."
-            value={query}
-            onChange={(event) => setQuery(event.target.value)}
-            className="w-64 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm shadow-sm"
-          />
-          <button
-            onClick={printPage}
-            className="rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-slate-300 hover:text-slate-900"
-          >
-            Imprimer / PDF
-          </button>
         </div>
       </header>
 
-      {view === "timeline" ? (
-        <Timeline3e grouped={grouped} phases={PHASES_3E} />
-      ) : (
-        <TableView rows={filtered} />
-      )}
+      <div className="rounded-3xl border border-slate-200 bg-white/80 p-6 shadow-sm">
+        {view === "timeline" ? (
+          <Timeline3e grouped={grouped} phases={PHASES_3E} />
+        ) : (
+          <TableView rows={filtered} />
+        )}
+      </div>
 
-      <footer className="mt-8 rounded-3xl border border-dashed border-slate-300 bg-white/70 p-4 text-xs text-slate-500">
+      <footer className="rounded-3xl border border-dashed border-slate-300 bg-white/80 p-4 text-xs text-slate-500">
         Données issues du canevas Parcours Avenir 3e. Dernière mise à jour : {new Date().toISOString().slice(0, 10)}.
       </footer>
     </div>
