@@ -20,55 +20,97 @@
   <body class="h-full">
     <div class="min-h-full">
       <header class="border-b bg-white/80 backdrop-blur">
-        <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <a href="#accueil" class="flex items-center gap-2 text-slate-900">
-            <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-sky-600 text-sm font-semibold text-white">
-              PA
-            </span>
-            <div>
-              <span class="block text-xs uppercase tracking-wide text-slate-500">
-                Lycée Français Jacques Prévert de Saly
-              </span>
-              <span class="block text-sm font-semibold">Parcours Avenir</span>
+        <div class="mx-auto max-w-6xl px-6 py-4">
+          <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+            <div class="flex items-center justify-between gap-4">
+              <a href="#accueil" class="flex items-center gap-2 text-slate-900">
+                <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-sky-600 text-sm font-semibold text-white">
+                  PA
+                </span>
+                <div>
+                  <span class="block text-xs uppercase tracking-wide text-slate-500">
+                    Lycée Français Jacques Prévert de Saly
+                  </span>
+                  <span class="block text-sm font-semibold">Parcours Avenir</span>
+                </div>
+              </a>
+              <button
+                type="button"
+                class="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-slate-300 hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 md:hidden"
+                aria-expanded="false"
+                aria-controls="navigation-principal"
+                data-mobile-menu-button
+              >
+                <svg
+                  data-mobile-menu-icon="open"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  class="h-5 w-5"
+                  aria-hidden="true"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+                <svg
+                  data-mobile-menu-icon="close"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  class="hidden h-5 w-5"
+                  aria-hidden="true"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+                <span data-mobile-menu-label>Menu</span>
+              </button>
             </div>
-          </a>
-          <nav class="flex items-center gap-4 text-sm font-medium text-slate-600">
-            <a
-              href="#accueil"
-              data-route-link
-              class="rounded-full px-3 py-1 transition hover:text-slate-900"
+            <nav
+              id="navigation-principal"
+              aria-label="Navigation principale"
+              data-mobile-menu
+              class="hidden flex-col gap-2 rounded-2xl border border-slate-200 bg-white/90 p-4 text-sm font-medium text-slate-600 shadow-lg md:flex md:flex-row md:items-center md:gap-4 md:rounded-full md:border-0 md:bg-transparent md:p-0 md:shadow-none"
             >
-              Accueil
-            </a>
-            <a
-              href="#film-annuel"
-              data-route-link
-              class="rounded-full px-3 py-1 transition hover:text-slate-900"
-            >
-              Film annuel 3EME
-            </a>
-            <a
-              href="#film-annuel-2nde"
-              data-route-link
-              class="rounded-full px-3 py-1 transition hover:text-slate-900"
-            >
-              Film annuel 2nde
-            </a>
-            <a
-              href="#film-annuel-1ere"
-              data-route-link
-              class="rounded-full px-3 py-1 transition hover:text-slate-900"
-            >
-              Film annuel 1ère
-            </a>
-            <a
-              href="#film-annuel-terminale"
-              data-route-link
-              class="rounded-full px-3 py-1 transition hover:text-slate-900"
-            >
-              Film annuel Terminale
-            </a>
-          </nav>
+              <a
+                href="#accueil"
+                data-route-link
+                class="w-full rounded-full px-4 py-2 text-left transition hover:text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 md:w-auto md:px-3 md:py-1 md:text-center"
+              >
+                Accueil
+              </a>
+              <a
+                href="#film-annuel"
+                data-route-link
+                class="w-full rounded-full px-4 py-2 text-left transition hover:text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 md:w-auto md:px-3 md:py-1 md:text-center"
+              >
+                Film annuel 3EME
+              </a>
+              <a
+                href="#film-annuel-2nde"
+                data-route-link
+                class="w-full rounded-full px-4 py-2 text-left transition hover:text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 md:w-auto md:px-3 md:py-1 md:text-center"
+              >
+                Film annuel 2nde
+              </a>
+              <a
+                href="#film-annuel-1ere"
+                data-route-link
+                class="w-full rounded-full px-4 py-2 text-left transition hover:text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-500 md:w-auto md:px-3 md:py-1 md:text-center"
+              >
+                Film annuel 1ère
+              </a>
+              <a
+                href="#film-annuel-terminale"
+                data-route-link
+                class="w-full rounded-full px-4 py-2 text-left transition hover:text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 md:w-auto md:px-3 md:py-1 md:text-center"
+              >
+                Film annuel Terminale
+              </a>
+            </nav>
+          </div>
         </div>
       </header>
 

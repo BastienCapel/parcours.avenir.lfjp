@@ -40,6 +40,87 @@ export function initRouting() {
   handleHashChange();
 }
 
+function initMobileMenu() {
+  const toggleButton = document.querySelector("[data-mobile-menu-button]");
+  const menu = document.querySelector("[data-mobile-menu]");
+
+  if (!toggleButton || !menu) {
+    return;
+  }
+
+  const label = toggleButton.querySelector("[data-mobile-menu-label]");
+  const openIcon = toggleButton.querySelector('[data-mobile-menu-icon="open"]');
+  const closeIcon = toggleButton.querySelector('[data-mobile-menu-icon="close"]');
+  const desktopMediaQuery = window.matchMedia("(min-width: 768px)");
+
+  const setCollapsedState = () => {
+    toggleButton.setAttribute("aria-expanded", "false");
+    if (label) {
+      label.textContent = "Menu";
+    }
+    if (openIcon) {
+      openIcon.classList.remove("hidden");
+    }
+    if (closeIcon) {
+      closeIcon.classList.add("hidden");
+    }
+    if (desktopMediaQuery.matches) {
+      menu.classList.remove("hidden");
+    } else {
+      menu.classList.add("hidden");
+    }
+    menu.classList.remove("flex");
+  };
+
+  const setExpandedState = () => {
+    toggleButton.setAttribute("aria-expanded", "true");
+    if (label) {
+      label.textContent = "Fermer";
+    }
+    if (openIcon) {
+      openIcon.classList.add("hidden");
+    }
+    if (closeIcon) {
+      closeIcon.classList.remove("hidden");
+    }
+    menu.classList.remove("hidden");
+    menu.classList.add("flex");
+  };
+
+  const handleToggle = () => {
+    const isExpanded = toggleButton.getAttribute("aria-expanded") === "true";
+    if (isExpanded) {
+      setCollapsedState();
+    } else {
+      setExpandedState();
+    }
+  };
+
+  const handleMenuClick = (event) => {
+    const target = event.target instanceof Element ? event.target.closest("a") : null;
+    if (!target) {
+      return;
+    }
+    setCollapsedState();
+  };
+
+  const handleBreakpointChange = () => {
+    setCollapsedState();
+  };
+
+  toggleButton.addEventListener("click", handleToggle);
+  menu.addEventListener("click", handleMenuClick);
+
+  if (typeof desktopMediaQuery.addEventListener === "function") {
+    desktopMediaQuery.addEventListener("change", handleBreakpointChange);
+  } else if (typeof desktopMediaQuery.addListener === "function") {
+    desktopMediaQuery.addListener(handleBreakpointChange);
+  }
+
+  setCollapsedState();
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   initRouting();
+  initMobileMenu();
 });
