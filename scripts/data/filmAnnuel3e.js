@@ -1,9 +1,11 @@
 export const DATA_3E = [
+  // Mieux se connaître
   {
     id: "enjeux-3e",
     phase: "Mieux se connaître",
     titre: "Présentation des enjeux de la 3e",
-    details: "Objectifs de l'année, calendrier de l'orientation, attentes et livrables.",
+    details:
+      "Objectifs de l'année, calendrier de l'orientation, attentes et livrables.",
     periode: "Septembre",
     ordre: 20250910,
     acteurs: ["PP", "PRIO", "Élèves"],
@@ -13,7 +15,8 @@ export const DATA_3E = [
     id: "bilan-competences",
     phase: "Mieux se connaître",
     titre: "Bilans de compétences (entretiens individuels)",
-    details: "Identifier compétences scolaires et extra-scolaires. Aider à amorcer le projet.",
+    details:
+      "Identifier compétences scolaires et extra-scolaires. Aider à amorcer le projet.",
     periode: "Toute l'année",
     ordre: 20250915,
     acteurs: ["PRIO", "Élèves"],
@@ -23,7 +26,8 @@ export const DATA_3E = [
     id: "tests-interets",
     phase: "Mieux se connaître",
     titre: "Goûts et intérêts (tests ONISEP, Kledou)",
-    details: "Exploration des intérêts et qualités. Restitution et pistes de métiers.",
+    details:
+      "Exploration des intérêts et qualités. Restitution et pistes de métiers.",
     periode: "Septembre–Novembre",
     ordre: 20250920,
     acteurs: ["PRIO", "Élèves"],
@@ -33,7 +37,8 @@ export const DATA_3E = [
     id: "autoportrait-slam",
     phase: "Mieux se connaître",
     titre: "Ateliers autoportrait — projet ‘Échos slamés de nos Avenirs’",
-    details: "Production artistique avec Français/Arts/Musique et artistes locaux.",
+    details:
+      "Production artistique avec Français/Arts/Musique et artistes locaux.",
     periode: "Septembre–Novembre",
     ordre: 20250925,
     acteurs: ["Français", "Arts", "Musique", "Artistes locaux"],
@@ -43,7 +48,8 @@ export const DATA_3E = [
     id: "definition-parcours",
     phase: "Mieux se connaître",
     titre: "Définir le Parcours Avenir (brainstorming + oraux)",
-    details: "Construction partagée des attendus et jalons de l'année.",
+    details:
+      "Construction partagée des attendus et jalons de l'année.",
     periode: "Septembre–Octobre",
     ordre: 20250926,
     acteurs: ["Élèves", "PP", "PRIO"],
@@ -53,7 +59,8 @@ export const DATA_3E = [
     id: "prepa-stage",
     phase: "Mieux se connaître",
     titre: "Préparation et recherche du stage découverte",
-    details: "Lettre de motivation, ciblage des entreprises, candidatures, simulation d'entretiens.",
+    details:
+      "Lettre de motivation, ciblage des entreprises, candidatures, simulation d'entretiens.",
     periode: "Septembre–Novembre",
     ordre: 20250927,
     acteurs: ["PRIO", "Élèves"],
@@ -73,7 +80,8 @@ export const DATA_3E = [
     id: "info-parents",
     phase: "Mieux se connaître",
     titre: "Info parents — voies post‑3e, calendrier, procédure",
-    details: "Présentation Bac général / Bac pro / CAP. Calendrier et affectation.",
+    details:
+      "Présentation Bac général / Bac pro / CAP. Calendrier et affectation.",
     periode: "11 novembre",
     ordre: 20251111,
     acteurs: ["PP", "PRIO"],
@@ -89,6 +97,8 @@ export const DATA_3E = [
     acteurs: ["PRIO", "Élèves"],
     lieu: "Vie de classe",
   },
+
+  // Plonger dans le monde professionnel
   {
     id: "stage-decouverte",
     phase: "Plonger dans le monde professionnel",
@@ -149,6 +159,8 @@ export const DATA_3E = [
     acteurs: ["Équipe pédagogique", "PP", "PRIO"],
     lieu: "LFJP / Extérieurs",
   },
+
+  // Finaliser les projets
   {
     id: "suivi-affectation",
     phase: "Finaliser les projets",
