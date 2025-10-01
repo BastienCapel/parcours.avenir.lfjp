@@ -1,4 +1,29 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+
+const ROUTES = {
+  HOME: "home",
+  ORIENTATION_3E: "3eme",
+};
+
+function getCurrentHash() {
+  if (typeof window === "undefined") return "";
+  return window.location.hash || "";
+}
+
+function parseRouteFromHash(hash) {
+  const normalized = (hash || "").replace(/^#\/?/, "").toLowerCase();
+  if (normalized.startsWith("3")) return ROUTES.ORIENTATION_3E;
+  return ROUTES.HOME;
+}
+
+function hashForRoute(route) {
+  switch (route) {
+    case ROUTES.ORIENTATION_3E:
+      return "#/3eme";
+    default:
+      return "#/";
+  }
+}
 
 // Page: Film annuel de l'orientation — 3e (LFJP)
 // Single-file React component. TailwindCSS expected in host.
@@ -195,6 +220,113 @@ const PHASES = [
   { key: "Finaliser les projets", color: "bg-amber-100 border-amber-300" },
 ];
 
+export default function ParcoursAvenirApp() {
+  const [route, setRoute] = useState(() => parseRouteFromHash(getCurrentHash()));
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const handleHashChange = () => setRoute(parseRouteFromHash(window.location.hash));
+    window.addEventListener("hashchange", handleHashChange);
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
+
+  const navigate = (targetRoute) => {
+    if (typeof window === "undefined") {
+      setRoute(targetRoute);
+      return;
+    }
+    const targetHash = hashForRoute(targetRoute);
+    if (window.location.hash !== targetHash) {
+      window.location.hash = targetHash;
+    } else {
+      setRoute(targetRoute);
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-slate-50 text-slate-900">
+      {route === ROUTES.ORIENTATION_3E ? (
+        <Orientation3ePage onNavigateHome={() => navigate(ROUTES.HOME)} />
+      ) : (
+        <HomePage onNavigate3e={() => navigate(ROUTES.ORIENTATION_3E)} />
+      )}
+    </div>
+  );
+}
+
+function HomePage({ onNavigate3e }) {
+  const stageHref = hashForRoute(ROUTES.ORIENTATION_3E);
+
+  const handleClick = (event) => {
+    event.preventDefault();
+    onNavigate3e?.();
+  };
+
+  return (
+    <div className="mx-auto flex max-w-5xl flex-col gap-12 px-6 py-16">
+      <section className="text-center">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sky-600">Parcours Avenir · LFJP</p>
+        <h1 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">Construire son avenir avec confiance</h1>
+        <p className="mt-4 text-base leading-relaxed text-slate-700">
+          Le Parcours Avenir aide chaque collégien du Lycée Français Jean-Pierre à mieux se connaître,
+          à explorer le monde professionnel et à construire un projet d'orientation ambitieux et réaliste.
+          Il articule ateliers, rencontres et accompagnements personnalisés pour que les élèves gagnent en
+          autonomie tout au long du collège.
+        </p>
+        <p className="mt-3 text-base leading-relaxed text-slate-700">
+          Ce dispositif est orchestré par notre professeure référente à l'information et à l'orientation,
+          <strong className="font-semibold"> Mme D'Aquino</strong>. Grâce à son expertise et à son écoute,
+          elle coordonne les équipes, suit chaque élève avec attention et fait du Parcours Avenir un levier
+          de réussite pour toute la communauté éducative.
+        </p>
+        <div className="mt-8 flex justify-center">
+          <a
+            href={stageHref}
+            onClick={handleClick}
+            className="inline-flex items-center gap-2 rounded-full bg-sky-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2"
+          >
+            Explorer l'étape 3e
+            <span aria-hidden>→</span>
+          </a>
+        </div>
+      </section>
+
+      <section className="grid gap-6 md:grid-cols-3">
+        <article className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-100">
+          <h2 className="text-lg font-semibold text-slate-900">Mieux se connaître</h2>
+          <p className="mt-2 text-sm leading-relaxed text-slate-700">
+            Des bilans personnels, des ateliers créatifs et des entretiens individuels pour identifier ses
+            talents, ses motivations et ce qui fait sens pour chaque élève.
+          </p>
+        </article>
+        <article className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-100">
+          <h2 className="text-lg font-semibold text-slate-900">Plonger dans le monde professionnel</h2>
+          <p className="mt-2 text-sm leading-relaxed text-slate-700">
+            Stages, forums des métiers et rencontres de professionnels ouvrent des horizons et donnent
+            des repères concrets pour imaginer l'avenir.
+          </p>
+        </article>
+        <article className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-100">
+          <h2 className="text-lg font-semibold text-slate-900">Finaliser son projet</h2>
+          <p className="mt-2 text-sm leading-relaxed text-slate-700">
+            Un accompagnement serré sur les procédures, les choix de voies et la préparation des dossiers
+            pour transformer l'ambition en projet abouti.
+          </p>
+        </article>
+      </section>
+
+      <section className="rounded-2xl border border-slate-200 bg-white/70 p-6 text-left shadow-sm">
+        <h2 className="text-lg font-semibold text-slate-900">Le focus 3e</h2>
+        <p className="mt-2 text-sm leading-relaxed text-slate-700">
+          L'année de 3e est une étape clé : on y consolide son projet, on expérimente le monde du travail
+          et on prépare l'affectation au lycée. Retrouvez l'intégralité du film annuel de l'orientation en
+          suivant le lien ci-dessus.
+        </p>
+      </section>
+    </div>
+  );
+}
+
 function classNames(...xs) {
   return xs.filter(Boolean).join(" ");
 }
@@ -203,10 +335,11 @@ function normalize(str) {
   return (str || "").toLowerCase().normalize("NFD").replace(/\p{Diacritic}/gu, "");
 }
 
-export default function Orientation3e() {
+function Orientation3ePage({ onNavigateHome }) {
   const [q, setQ] = useState("");
   const [phase, setPhase] = useState("all");
   const [view, setView] = useState("timeline"); // timeline | table
+  const homeHref = hashForRoute(ROUTES.HOME);
 
   const filtered = useMemo(() => {
     const nq = normalize(q);
@@ -233,10 +366,27 @@ export default function Orientation3e() {
     );
   }, [filtered]);
 
-  const printPage = () => window.print();
+  const printPage = () => {
+    if (typeof window !== "undefined") {
+      window.print();
+    }
+  };
 
   return (
     <div className="mx-auto max-w-7xl p-6">
+      <div className="mb-4">
+        <a
+          href={homeHref}
+          onClick={(event) => {
+            event.preventDefault();
+            onNavigateHome?.();
+          }}
+          className="inline-flex items-center gap-2 text-sm font-medium text-sky-700 hover:text-sky-900"
+        >
+          <span aria-hidden>←</span>
+          Retour à l'accueil
+        </a>
+      </div>
       <header className="mb-6 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
         <div>
           <h1 className="text-2xl font-semibold tracking-tight">Film annuel de l'orientation — 3e</h1>
