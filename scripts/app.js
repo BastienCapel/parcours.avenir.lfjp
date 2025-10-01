@@ -1,6 +1,7 @@
 import { Orientation3e } from "./scripts/components/orientation/Orientation3e.js";
 import { Orientation2nde } from "./scripts/components/orientation/Orientation2nde.js";
 import { Orientation1ere } from "./scripts/components/orientation/Orientation1ere.js";
+import { OrientationTerminale } from "./scripts/components/orientation/OrientationTerminale.js";
 
 const { createRoot } = ReactDOM;
 
@@ -21,5 +22,11 @@ document.addEventListener("DOMContentLoaded", () => {
   if (root1ereElement) {
     const root = createRoot(root1ereElement);
     root.render(<Orientation1ere />);
+  }
+
+  const rootTerminaleElement = document.getElementById("film-annuel-terminale-root");
+  if (rootTerminaleElement) {
+    const root = createRoot(rootTerminaleElement);
+    root.render(<OrientationTerminale />);
   }
 });

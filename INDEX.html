@@ -6,7 +6,7 @@
     <title>Parcours Avenir · Lycée Français Jacques Prévert de Saly</title>
     <meta
       name="description"
-      content="Informations Parcours Avenir LFJP : présentation générale et films annuels de l'orientation pour les classes de 3e, 2nde et 1ère."
+      content="Informations Parcours Avenir LFJP : présentation générale et films annuels de l'orientation pour les classes de 3e, 2nde, 1ère et Terminale."
     />
     <link
       rel="icon"
@@ -61,6 +61,13 @@
             >
               Film annuel 1ère
             </a>
+            <a
+              href="#film-annuel-terminale"
+              data-route-link
+              class="rounded-full px-3 py-1 transition hover:text-slate-900"
+            >
+              Film annuel Terminale
+            </a>
           </nav>
         </div>
       </header>
@@ -76,8 +83,8 @@
                 Construire pas à pas un projet d'orientation ambitieux et réaliste
               </h1>
               <p class="mt-6 text-lg text-slate-600">
-                À travers une programmation annuelle, l'équipe pédagogique du LFJP accompagne les élèves de 3e, 2nde et 1ère
-                dans la découverte d'eux-mêmes, du monde professionnel et des voies de formation. Retrouvez ici les repères
+                À travers une programmation annuelle, l'équipe pédagogique du LFJP accompagne les élèves de 3e, 2nde, 1ère et
+                Terminale dans la découverte d'eux-mêmes, du monde professionnel et des voies de formation. Retrouvez ici les repères
                 clés, les ressources et les contacts utiles pour suivre leur progression tout au long de l'année.
               </p>
               <div class="mt-8 flex flex-wrap gap-3">
@@ -98,6 +105,12 @@
                   class="inline-flex items-center gap-2 rounded-full bg-fuchsia-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-fuchsia-700"
                 >
                   Film annuel 1ère
+                </a>
+                <a
+                  href="#film-annuel-terminale"
+                  class="inline-flex items-center gap-2 rounded-full bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-700"
+                >
+                  Film annuel Terminale
                 </a>
                 <a
                   href="https://eduscol.education.fr/odysseum/parcours-avenir"
@@ -212,6 +225,32 @@
               </a>
             </div>
             <div id="film-annuel-1ere-root"></div>
+          </div>
+        </section>
+
+        <section
+          id="film-annuel-terminale"
+          data-route
+          class="hidden border-t border-slate-200 bg-white/70"
+          aria-hidden="true"
+        >
+          <div class="mx-auto max-w-7xl px-6 py-10">
+            <div class="mb-8 flex flex-wrap items-baseline justify-between gap-4">
+              <div>
+                <p class="text-sm font-semibold uppercase tracking-wide text-indigo-600">Classe de Terminale</p>
+                <h2 class="mt-2 text-2xl font-bold text-slate-900">Film annuel de l'orientation</h2>
+                <p class="mt-2 max-w-2xl text-sm text-slate-600">
+                  Suivez les jalons clés de l'accompagnement post-bac : phases, acteurs impliqués et calendrier Parcoursup.
+                </p>
+              </div>
+              <a
+                href="#accueil"
+                class="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-slate-600 hover:border-slate-300 hover:text-slate-900"
+              >
+                ← Retour à l'accueil
+              </a>
+            </div>
+            <div id="film-annuel-terminale-root"></div>
           </div>
         </section>
       </main>
