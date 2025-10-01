@@ -3,19 +3,189 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Film annuel de l'orientation — 3e · Parcours Avenir LFJP</title>
+    <title>Parcours Avenir · Lycée Français Jules Verne de Panama</title>
     <meta
       name="description"
-      content="Parcours Avenir 3e du Lycée Français Jules Verne de Panama : timeline, tableau, filtres et impression."
+      content="Informations Parcours Avenir LFJP : présentation générale et film annuel de l'orientation pour les classes de 3e."
     />
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%230F172A' stroke-width='1.5'><path d='M3 4h10M3 8h10M3 12h6'/></svg>" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%230F172A' stroke-width='1.5'><path d='M3 4h10M3 8h10M3 12h6'/></svg>"
+    />
     <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
     <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js" crossorigin></script>
   </head>
   <body class="h-full">
-    <div id="root" class="min-h-full"></div>
+    <div class="min-h-full">
+      <header class="border-b bg-white/80 backdrop-blur">
+        <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+          <a href="#accueil" class="flex items-center gap-2 text-slate-900">
+            <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-sky-600 text-sm font-semibold text-white">
+              PA
+            </span>
+            <div>
+              <span class="block text-xs uppercase tracking-wide text-slate-500">
+                Lycée Français Jules Verne de Panama
+              </span>
+              <span class="block text-sm font-semibold">Parcours Avenir</span>
+            </div>
+          </a>
+          <nav class="flex items-center gap-4 text-sm font-medium text-slate-600">
+            <a
+              href="#accueil"
+              data-route-link
+              class="rounded-full px-3 py-1 transition hover:text-slate-900"
+            >
+              Accueil
+            </a>
+            <a
+              href="#film-annuel"
+              data-route-link
+              class="rounded-full px-3 py-1 transition hover:text-slate-900"
+            >
+              Film annuel 3e
+            </a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section id="accueil" data-route class="mx-auto max-w-6xl px-6 py-16">
+          <div class="grid gap-12 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:items-center">
+            <div>
+              <p class="text-sm font-semibold uppercase tracking-wide text-sky-600">
+                Parcours Avenir · Collège
+              </p>
+              <h1 class="mt-4 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+                Construire pas à pas un projet d'orientation ambitieux et réaliste
+              </h1>
+              <p class="mt-6 text-lg text-slate-600">
+                À travers une programmation annuelle, l'équipe pédagogique du LFJP accompagne les élèves de 3e dans la
+                découverte d'eux-mêmes, du monde professionnel et des voies de formation. Retrouvez ici les repères clés,
+                les ressources et les contacts utiles pour suivre leur progression tout au long de l'année.
+              </p>
+              <div class="mt-8 flex flex-wrap gap-3">
+                <a
+                  href="#film-annuel"
+                  class="inline-flex items-center gap-2 rounded-full bg-sky-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-sky-700"
+                >
+                  Consulter le film annuel
+                </a>
+                <a
+                  href="https://eduscol.education.fr/odysseum/parcours-avenir"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="inline-flex items-center gap-2 rounded-full border border-slate-200 px-5 py-2.5 text-sm font-semibold text-slate-700 hover:border-slate-300 hover:text-slate-900"
+                >
+                  Ressources nationales
+                  <span aria-hidden="true">→</span>
+                </a>
+              </div>
+            </div>
+            <aside class="space-y-6 rounded-3xl border border-slate-200 bg-white/80 p-6 shadow-sm">
+              <h2 class="text-base font-semibold text-slate-900">Points de contact</h2>
+              <ul class="space-y-4 text-sm text-slate-600">
+                <li>
+                  <span class="block font-semibold text-slate-800">PRIO</span>
+                  <span>Accompagnement individuel, bilans, mini-stages.</span>
+                </li>
+                <li>
+                  <span class="block font-semibold text-slate-800">Professeur principal</span>
+                  <span>Suivi de classe, coordination des actions et lien familles.</span>
+                </li>
+                <li>
+                  <span class="block font-semibold text-slate-800">Équipe pédagogique &amp; CPE</span>
+                  <span>Projets disciplinaires, immersion professionnelle, vie scolaire.</span>
+                </li>
+              </ul>
+              <div class="rounded-2xl bg-slate-900/90 p-4 text-sm text-slate-100">
+                <p class="font-semibold">Besoin d'un rendez-vous ?</p>
+                <p class="mt-1">
+                  Contactez le bureau d'orientation ou votre professeur principal pour planifier un échange personnalisé.
+                </p>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section
+          id="film-annuel"
+          data-route
+          class="hidden border-t border-slate-200 bg-white/70"
+          aria-hidden="true"
+        >
+          <div class="mx-auto max-w-7xl px-6 py-10">
+            <div class="mb-8 flex flex-wrap items-baseline justify-between gap-4">
+              <div>
+                <p class="text-sm font-semibold uppercase tracking-wide text-sky-600">Classe de 3e</p>
+                <h2 class="mt-2 text-2xl font-bold text-slate-900">Film annuel de l'orientation</h2>
+                <p class="mt-2 max-w-2xl text-sm text-slate-600">
+                  Explorez les actions programmées tout au long de l'année scolaire, filtrez par phase ou acteurs, et
+                  préparez facilement vos suivis individuels.
+                </p>
+              </div>
+              <a
+                href="#accueil"
+                class="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-slate-600 hover:border-slate-300 hover:text-slate-900"
+              >
+                ← Retour à l'accueil
+              </a>
+            </div>
+            <div id="film-annuel-root"></div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="border-t bg-white/80 py-6">
+        <div class="mx-auto flex max-w-6xl flex-col gap-2 px-6 text-xs text-slate-500 md:flex-row md:items-center md:justify-between">
+          <span>© Lycée Français Jules Verne de Panama — Parcours Avenir.</span>
+          <span>Version de travail — documentation interne.</span>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      (function () {
+        const DEFAULT_ROUTE = "accueil";
+        const sections = Array.from(document.querySelectorAll("[data-route]"));
+        const links = Array.from(document.querySelectorAll("[data-route-link]"));
+        const sectionById = new Map(sections.map((section) => [section.id, section]));
+
+        function setRoute(hash) {
+          const target = (hash || "").replace(/^#/, "") || DEFAULT_ROUTE;
+          const section = sectionById.get(target);
+
+          if (!section) {
+            if (target !== DEFAULT_ROUTE) {
+              window.location.hash = `#${DEFAULT_ROUTE}`;
+            }
+            return;
+          }
+
+          sections.forEach((element) => {
+            const isActive = element === section;
+            element.classList.toggle("hidden", !isActive);
+            element.setAttribute("aria-hidden", String(!isActive));
+          });
+
+          links.forEach((link) => {
+            const isActive = link.hash.replace(/^#/, "") === target;
+            if (isActive) {
+              link.setAttribute("aria-current", "page");
+              link.classList.add("bg-slate-900/5", "text-slate-900");
+            } else {
+              link.removeAttribute("aria-current");
+              link.classList.remove("bg-slate-900/5", "text-slate-900");
+            }
+          });
+        }
+
+        window.addEventListener("hashchange", () => setRoute(window.location.hash));
+        window.addEventListener("DOMContentLoaded", () => setRoute(window.location.hash));
+      })();
+    </script>
 
     <script type="text/babel">
       const { useMemo, useState } = React;
@@ -254,40 +424,40 @@
         const printPage = () => window.print();
 
         return (
-          <div className="mx-auto max-w-7xl p-6">
-            <header className="mb-6 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <div>
+            <header className="mb-6 flex flex-col gap-4 rounded-3xl border border-slate-200 bg-white/70 p-6 shadow-sm md:flex-row md:items-end md:justify-between">
               <div>
-                <h1 className="text-2xl font-semibold tracking-tight">
+                <h3 className="text-xl font-semibold tracking-tight">
                   Film annuel de l'orientation — 3e
-                </h1>
+                </h3>
                 <p className="text-sm text-slate-600">
                   LFJP · Parcours Avenir · Année scolaire 2025‑2026
                 </p>
               </div>
               <div className="flex flex-wrap items-center gap-2">
                 <div className="flex items-center gap-2">
-                  <label className="text-sm text-slate-600" htmlFor="view">
+                  <label className="text-xs font-semibold uppercase tracking-wide text-slate-500" htmlFor="view">
                     Vue
                   </label>
                   <select
                     id="view"
                     value={view}
                     onChange={(event) => setView(event.target.value)}
-                    className="rounded-xl border px-3 py-2 text-sm"
+                    className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm shadow-sm"
                   >
                     <option value="timeline">Timeline</option>
                     <option value="table">Tableau</option>
                   </select>
                 </div>
                 <div className="flex items-center gap-2">
-                  <label className="text-sm text-slate-600" htmlFor="phase">
+                  <label className="text-xs font-semibold uppercase tracking-wide text-slate-500" htmlFor="phase">
                     Phase
                   </label>
                   <select
                     id="phase"
                     value={phase}
                     onChange={(event) => setPhase(event.target.value)}
-                    className="rounded-xl border px-3 py-2 text-sm"
+                    className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm shadow-sm"
                   >
                     <option value="all">Toutes</option>
                     {PHASES.map((p) => (
@@ -302,11 +472,11 @@
                   placeholder="Rechercher titre, période, acteurs..."
                   value={q}
                   onChange={(event) => setQ(event.target.value)}
-                  className="w-64 rounded-xl border px-3 py-2 text-sm"
+                  className="w-64 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm shadow-sm"
                 />
                 <button
                   onClick={printPage}
-                  className="rounded-xl border px-3 py-2 text-sm hover:bg-slate-50"
+                  className="rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-slate-300 hover:text-slate-900"
                 >
                   Imprimer / PDF
                 </button>
@@ -319,8 +489,8 @@
               <TableView rows={filtered} />
             )}
 
-            <footer className="mt-8 border-t pt-4 text-xs text-slate-500">
-              Données issues du canevas Parcours Avenir 3e. Dernière mise à jour: {" "}
+            <footer className="mt-8 rounded-3xl border border-dashed border-slate-300 bg-white/70 p-4 text-xs text-slate-500">
+              Données issues du canevas Parcours Avenir 3e. Dernière mise à jour : {" "}
               {new Date().toISOString().slice(0, 10)}.
             </footer>
           </div>
@@ -329,38 +499,35 @@
 
       function Timeline({ grouped }) {
         return (
-          <div className="flex flex-col gap-8">
+          <div className="space-y-10">
             {grouped.map(([title, items]) => {
               const phaseMeta = PHASES.find((p) => p.key === title);
               return (
-                <section key={title}>
-                  <h2 className="mb-3 text-lg font-semibold">{title}</h2>
+                <section key={title} className="rounded-3xl border border-slate-200 bg-white/70 p-6 shadow-sm">
+                  <h4 className="mb-4 text-lg font-semibold text-slate-900">{title}</h4>
                   <div className="relative pl-6">
-                    <div
-                      className="absolute left-2 top-0 h-full w-px bg-slate-200"
-                      aria-hidden
-                    />
+                    <div className="absolute left-2 top-0 h-full w-px bg-slate-200" aria-hidden />
                     <ul className="space-y-4">
                       {items.map((it) => (
                         <li key={it.id} className="relative">
                           <div
-                            className="absolute -left-1.5 top-2 h-3 w-3 rounded-full bg-white ring-2 ring-slate-300"
+                            className="absolute -left-1.5 top-3 h-3 w-3 rounded-full bg-white ring-2 ring-slate-300"
                             aria-hidden
                           />
                           <article
                             className={classNames(
-                              "rounded-2xl border p-4",
+                              "rounded-2xl border p-4 shadow-sm",
                               phaseMeta?.color
                             )}
                           >
                             <div className="flex flex-wrap items-baseline justify-between gap-2">
-                              <h3 className="font-medium">{it.titre}</h3>
-                              <span className="text-xs text-slate-700">
+                              <h5 className="font-medium text-slate-900">{it.titre}</h5>
+                              <span className="text-xs font-semibold uppercase tracking-wide text-slate-700">
                                 {it.periode}
                               </span>
                             </div>
-                            <p className="mt-1 text-sm text-slate-700">{it.details}</p>
-                            <div className="mt-2 flex flex-wrap gap-2 text-xs text-slate-600">
+                            <p className="mt-2 text-sm text-slate-700">{it.details}</p>
+                            <div className="mt-3 flex flex-wrap gap-2 text-xs text-slate-600">
                               <Badge icon="users" label={it.acteurs.join(", ")} />
                               <Badge icon="map-pin" label={it.lieu} />
                               <Badge icon="flag" label={it.phase} />
@@ -379,9 +546,9 @@
 
       function TableView({ rows }) {
         return (
-          <div className="overflow-hidden rounded-2xl border">
+          <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white/80 shadow-sm">
             <table className="min-w-full divide-y divide-slate-200">
-              <thead className="bg-slate-50">
+              <thead className="bg-slate-50/70">
                 <tr>
                   <Th>Phase</Th>
                   <Th>Période</Th>
@@ -391,16 +558,12 @@
                   <Th>Lieu</Th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-100 bg-white">
+              <tbody className="divide-y divide-slate-100 bg-white/80">
                 {rows.map((r) => (
-                  <tr key={r.id} className="hover:bg-slate-50">
-                    <Td className="whitespace-nowrap text-slate-700">
-                      {r.phase}
-                    </Td>
-                    <Td className="whitespace-nowrap text-slate-700">
-                      {r.periode}
-                    </Td>
-                    <Td className="font-medium">{r.titre}</Td>
+                  <tr key={r.id} className="hover:bg-slate-50/70">
+                    <Td className="whitespace-nowrap text-slate-700">{r.phase}</Td>
+                    <Td className="whitespace-nowrap text-slate-700">{r.periode}</Td>
+                    <Td className="font-medium text-slate-900">{r.titre}</Td>
                     <Td className="text-slate-700">{r.details}</Td>
                     <Td className="text-slate-700">{r.acteurs.join(", ")}</Td>
                     <Td className="text-slate-700">{r.lieu}</Td>
@@ -414,7 +577,7 @@
 
       function Th({ children }) {
         return (
-          <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-slate-600">
+          <th className="px-4 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-slate-600">
             {children}
           </th>
         );
@@ -426,7 +589,7 @@
 
       function Badge({ icon, label }) {
         return (
-          <span className="inline-flex items-center gap-1 rounded-full bg-white/70 px-2 py-1 text-[11px] ring-1 ring-slate-300">
+          <span className="inline-flex items-center gap-1 rounded-full bg-white/70 px-2 py-1 text-[11px] shadow-sm ring-1 ring-slate-300">
             <Icon name={icon} className="h-3 w-3" />
             <span>{label}</span>
           </span>
@@ -458,8 +621,11 @@
         );
       }
 
-      const root = ReactDOM.createRoot(document.getElementById("root"));
-      root.render(<Orientation3e />);
+      const rootElement = document.getElementById("film-annuel-root");
+      if (rootElement) {
+        const root = ReactDOM.createRoot(rootElement);
+        root.render(<Orientation3e />);
+      }
     </script>
   </body>
 </html>
