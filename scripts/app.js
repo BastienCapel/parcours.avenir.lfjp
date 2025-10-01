@@ -1,7 +1,7 @@
-import { Orientation3e } from "./scripts/components/orientation/Orientation3e.js";
-import { Orientation2nde } from "./scripts/components/orientation/Orientation2nde.js";
-import { Orientation1ere } from "./scripts/components/orientation/Orientation1ere.js";
-import { OrientationTerminale } from "./scripts/components/orientation/OrientationTerminale.js";
+import { Orientation3e } from "./components/orientation/Orientation3e.js";
+import { Orientation2nde } from "./components/orientation/Orientation2nde.js";
+import { Orientation1ere } from "./components/orientation/Orientation1ere.js";
+import { OrientationTerminale } from "./components/orientation/OrientationTerminale.js";
 
 const { createRoot } = ReactDOM;
 
