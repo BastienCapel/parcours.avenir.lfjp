@@ -20,9 +20,19 @@ export function OrientationTerminale() {
   return (
     <div className="mx-auto max-w-7xl p-6">
       <header className="mb-6 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-        <div>
-          <h3 className="text-2xl font-semibold tracking-tight">Film annuel de l'orientation — Terminale</h3>
-          <p className="text-sm text-slate-600">LFJP · Parcours Avenir · Année scolaire 2025‑2026</p>
+        <div className="flex items-start gap-3">
+          <img
+            src="https://i.imgur.com/0YmGlXO.png"
+            alt="Logo du Lycée Français Jacques Prévert de Saly"
+            className="h-12 w-auto"
+            loading="lazy"
+            width="96"
+            height="96"
+          />
+          <div>
+            <h3 className="text-2xl font-semibold tracking-tight">Film annuel de l'orientation — Terminale</h3>
+            <p className="text-sm text-slate-600">LFJP · Parcours Avenir · Année scolaire 2025‑2026</p>
+          </div>
         </div>
         <div className="flex flex-wrap items-center gap-2">
           <div className="flex items-center gap-2">
