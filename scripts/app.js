@@ -4,29 +4,30 @@ import { Orientation1ere } from "./components/orientation/Orientation1ere.js";
 import { OrientationTerminale } from "./components/orientation/OrientationTerminale.js";
 
 const { createRoot } = ReactDOM;
+const { createElement } = React;
 
 document.addEventListener("DOMContentLoaded", () => {
   const rootElement = document.getElementById("film-annuel-root");
   if (rootElement) {
     const root = createRoot(rootElement);
-    root.render(<Orientation3e />);
+    root.render(createElement(Orientation3e));
   }
 
   const root2ndeElement = document.getElementById("film-annuel-2nde-root");
   if (root2ndeElement) {
     const root = createRoot(root2ndeElement);
-    root.render(<Orientation2nde />);
+    root.render(createElement(Orientation2nde));
   }
 
   const root1ereElement = document.getElementById("film-annuel-1ere-root");
   if (root1ereElement) {
     const root = createRoot(root1ereElement);
-    root.render(<Orientation1ere />);
+    root.render(createElement(Orientation1ere));
   }
 
   const rootTerminaleElement = document.getElementById("film-annuel-terminale-root");
   if (rootTerminaleElement) {
     const root = createRoot(rootTerminaleElement);
-    root.render(<OrientationTerminale />);
+    root.render(createElement(OrientationTerminale));
   }
 });
