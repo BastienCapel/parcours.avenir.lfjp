@@ -47,6 +47,13 @@
             >
               Film annuel 3e
             </a>
+            <a
+              href="#film-annuel-2nde"
+              data-route-link
+              class="rounded-full px-3 py-1 transition hover:text-slate-900"
+            >
+              Film annuel 2nde
+            </a>
           </nav>
         </div>
       </header>
@@ -72,6 +79,12 @@
                   class="inline-flex items-center gap-2 rounded-full bg-sky-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-sky-700"
                 >
                   Consulter le film annuel
+                </a>
+                <a
+                  href="#film-annuel-2nde"
+                  class="inline-flex items-center gap-2 rounded-full bg-emerald-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-emerald-700"
+                >
+                  Film annuel 2nde
                 </a>
                 <a
                   href="https://eduscol.education.fr/odysseum/parcours-avenir"
@@ -136,6 +149,32 @@
             <div id="film-annuel-root"></div>
           </div>
         </section>
+
+        <section
+          id="film-annuel-2nde"
+          data-route
+          class="hidden border-t border-slate-200 bg-white/70"
+          aria-hidden="true"
+        >
+          <div class="mx-auto max-w-7xl px-6 py-10">
+            <div class="mb-8 flex flex-wrap items-baseline justify-between gap-4">
+              <div>
+                <p class="text-sm font-semibold uppercase tracking-wide text-emerald-600">Classe de 2nde</p>
+                <h2 class="mt-2 text-2xl font-bold text-slate-900">Film annuel de l'orientation</h2>
+                <p class="mt-2 max-w-2xl text-sm text-slate-600">
+                  Retrouvez les étapes clés du Parcours Avenir en 2nde, explorez les ressources et filtrez les actions pour accompagner chaque élève.
+                </p>
+              </div>
+              <a
+                href="#accueil"
+                class="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-slate-600 hover:border-slate-300 hover:text-slate-900"
+              >
+                ← Retour à l'accueil
+              </a>
+            </div>
+            <div id="film-annuel-2nde-root"></div>
+          </div>
+        </section>
       </main>
 
       <footer class="border-t bg-white/80 py-6">
@@ -190,7 +229,7 @@
     <script type="text/babel">
       const { useMemo, useState } = React;
 
-      const DATA = [
+      const DATA_3E = [
         {
           id: "enjeux-3e",
           phase: "Mieux se connaître",
@@ -370,7 +409,7 @@
         },
       ];
 
-      const PHASES = [
+      const PHASES_3E = [
         { key: "Mieux se connaître", color: "bg-sky-100 border-sky-300" },
         {
           key: "Plonger dans le monde professionnel",
@@ -390,6 +429,179 @@
           .replace(/\p{Diacritic}/gu, "");
       }
 
+      const DATA_2NDE = [
+        {
+          id: "reunion-parents-2nde",
+          phase: "Connaître les voies post‑2de",
+          titre: "Réunion d'information parents — voies, spécialités, procédures",
+          details:
+            "Présentation des enjeux de la 2de, calendrier orientation, AGORA Monde, ADN‑AEFE, procédures d’affectation post‑2de.",
+          periode: "13 novembre",
+          ordre: 20251113,
+          acteurs: ["PP", "Profs de spécialités", "PRIO"],
+          lieu: "LFJP · Salle polyvalente",
+        },
+        {
+          id: "powerpoint-choisir-bac",
+          phase: "Connaître les voies post‑2de",
+          titre: "Ressource: ‘Après la 2de, choisir son bac et ses spécialités’",
+          details: "Appui pour comprendre la voie générale et la série STMG.",
+          periode: "Novembre",
+          ordre: 20251114,
+          acteurs: ["PRIO", "PP"],
+          lieu: "En classe / ENT",
+        },
+        {
+          id: "diag-5mn",
+          phase: "Mieux se connaître & construire",
+          titre: "Entretien diagnostic 5 min pour chaque élève",
+          details: "État des lieux rapide. Repérage des besoins. Priorisation du suivi.",
+          periode: "Septembre–Octobre",
+          ordre: 20250920,
+          acteurs: ["PP", "PRIO"],
+          lieu: "Bureau orientation S9 / HVC",
+        },
+        {
+          id: "entretiens-individuels",
+          phase: "Mieux se connaître & construire",
+          titre: "Entretiens individuels d'orientation",
+          details:
+            "Aider à s’informer sur secteurs, domaines, formations. Amorcer une réflexion cohérente avec le projet post‑2de. Suivi renforcé pour élèves en difficulté.",
+          periode: "Toute l'année",
+          ordre: 20251001,
+          acteurs: ["PP", "PRIO"],
+          lieu: "Bureau orientation S9 / HVC",
+        },
+        {
+          id: "test-kledou",
+          phase: "Mieux se connaître & construire",
+          titre: "Test d’orientation Kledou pour tous",
+          details: "Identifier intérêts et pistes de parcours de formation.",
+          periode: "Octobre",
+          ordre: 20251015,
+          acteurs: ["PRIO"],
+          lieu: "CDI / HVC",
+        },
+        {
+          id: "agora-inscription",
+          phase: "Mieux se connaître & construire",
+          titre: "Inscription obligatoire sur AGORA Monde",
+          details: "S’informer et échanger avec le réseau AEFE.",
+          periode: "Octobre",
+          ordre: 20251020,
+          acteurs: ["PP", "PRIO"],
+          lieu: "En classe / À la maison",
+        },
+        {
+          id: "identifier-hypotheses",
+          phase: "Mieux se connaître & construire",
+          titre: "Identifier les premières hypothèses de choix",
+          details: "Compléter la fiche ‘choix des spécialités’.",
+          periode: "Janvier–Février",
+          ordre: 20260131,
+          acteurs: ["Élèves", "PP", "PRIO"],
+          lieu: "Heure de vie de classe",
+        },
+        {
+          id: "forum-metiers-2nde",
+          phase: "Explorer métiers",
+          titre: "Participation obligatoire au Forum des métiers du LFJP",
+          details: "Rencontres professionnelles, stands, échanges.",
+          periode: "29 novembre",
+          ordre: 20251129,
+          acteurs: ["Parents d'élèves", "Intervenants ext.", "PP", "PRIO"],
+          lieu: "LFJP · Forum",
+        },
+        {
+          id: "recherche-stage",
+          phase: "Explorer métiers",
+          titre: "Recherche du stage découverte (ciblage, convention)",
+          details: "Candidatures, conventions, suivi.",
+          periode: "Janvier–Mars / Avril–Mai",
+          ordre: 20260115,
+          acteurs: ["PP", "CPE", "PRIO", "Parents"],
+          lieu: "LFJP / À la maison",
+        },
+        {
+          id: "stage-decouverte-2nde",
+          phase: "Explorer métiers",
+          titre: "Stage de découverte métier",
+          details: "Observation d’un milieu pro. Tenue d’un carnet d’expérience.",
+          periode: "Juin",
+          ordre: 20260610,
+          acteurs: ["Élèves"],
+          lieu: "Extérieur",
+        },
+        {
+          id: "oral-stage-2nde",
+          phase: "Explorer métiers",
+          titre: "Oral de stage de découverte",
+          details: "Préparation diaporama, grille, soutenance.",
+          periode: "Juin",
+          ordre: 20260620,
+          acteurs: ["PP", "PRIO"],
+          lieu: "LFJP",
+        },
+        {
+          id: "visites-entreprises",
+          phase: "Explorer métiers",
+          titre: "Visites d’entreprises locales et projets pédagogiques",
+          details: "Interventions, déplacements, témoignages.",
+          periode: "Toute l'année",
+          ordre: 20251210,
+          acteurs: ["Équipe pédagogique", "PP", "PRIO"],
+          lieu: "LFJP / Extérieur",
+        },
+        {
+          id: "immersion-specialites",
+          phase: "Choisir ses spécialités",
+          titre: "Séances d’immersion dans les spécialités",
+          details: "Découverte des attendus. Témoignages d’élèves de 1re et Tle.",
+          periode: "Février–Mars",
+          ordre: 20260301,
+          acteurs: ["Professeurs de spécialités"],
+          lieu: "LFJP",
+        },
+        {
+          id: "reunion-specialites-2",
+          phase: "Choisir ses spécialités",
+          titre: "2ᵉ réunion d'information spécialités et STMG",
+          details: "Voie générale et bacs technologiques. Procédures d’affectation.",
+          periode: "Mars",
+          ordre: 20260320,
+          acteurs: ["PP", "Profs de spécialités", "PRIO", "Parents"],
+          lieu: "LFJP",
+        },
+        {
+          id: "adn-presentation",
+          phase: "ADN‑AEFE",
+          titre: "Présentation ADN‑AEFE aux familles",
+          details: "Mécanisme d’échanges scolaires. Candidatures et critères.",
+          periode: "Novembre",
+          ordre: 20251110,
+          acteurs: ["CPE", "PP", "PRIO"],
+          lieu: "LFJP",
+        },
+        {
+          id: "adn-entretiens",
+          phase: "ADN‑AEFE",
+          titre: "Entretiens de validation des candidatures ADN",
+          details: "Vérification des dossiers. Avis et priorisation.",
+          periode: "Novembre–Décembre",
+          ordre: 20251205,
+          acteurs: ["Proviseur", "CPE", "PP", "PRIO"],
+          lieu: "LFJP",
+        },
+      ];
+
+      const PHASES_2NDE = [
+        { key: "Connaître les voies post‑2de", color: "bg-sky-100 border-sky-300" },
+        { key: "Mieux se connaître & construire", color: "bg-emerald-100 border-emerald-300" },
+        { key: "Explorer métiers", color: "bg-amber-100 border-amber-300" },
+        { key: "Choisir ses spécialités", color: "bg-fuchsia-100 border-fuchsia-300" },
+        { key: "ADN‑AEFE", color: "bg-indigo-100 border-indigo-300" },
+      ];
+
       function Orientation3e() {
         const [q, setQ] = useState("");
         const [phase, setPhase] = useState("all");
@@ -397,7 +609,7 @@
 
         const filtered = useMemo(() => {
           const nq = normalize(q);
-          return DATA.filter(
+          return DATA_3E.filter(
             (d) =>
               (phase === "all" || d.phase === phase) &&
               (nq === "" ||
@@ -416,8 +628,8 @@
           }
           return Array.from(map.entries()).sort(
             (a, b) =>
-              PHASES.findIndex((p) => p.key === a[0]) -
-              PHASES.findIndex((p) => p.key === b[0])
+              PHASES_3E.findIndex((p) => p.key === a[0]) -
+              PHASES_3E.findIndex((p) => p.key === b[0])
           );
         }, [filtered]);
 
@@ -460,7 +672,7 @@
                     className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm shadow-sm"
                   >
                     <option value="all">Toutes</option>
-                    {PHASES.map((p) => (
+                    {PHASES_3E.map((p) => (
                       <option key={p.key} value={p.key}>
                         {p.key}
                       </option>
@@ -484,7 +696,7 @@
             </header>
 
             {view === "timeline" ? (
-              <Timeline grouped={grouped} />
+              <Timeline grouped={grouped} phases={PHASES_3E} />
             ) : (
               <TableView rows={filtered} />
             )}
@@ -497,11 +709,118 @@
         );
       }
 
-      function Timeline({ grouped }) {
+      function Orientation2nde() {
+        const [q, setQ] = useState("");
+        const [phase, setPhase] = useState("all");
+        const [view, setView] = useState("timeline");
+
+        const filtered = useMemo(() => {
+          const nq = normalize(q);
+          return DATA_2NDE.filter(
+            (d) =>
+              (phase === "all" || d.phase === phase) &&
+              (nq === "" ||
+                normalize(d.titre).includes(nq) ||
+                normalize(d.details).includes(nq) ||
+                normalize(d.periode).includes(nq) ||
+                normalize(d.acteurs.join(" ")).includes(nq))
+          ).sort((a, b) => a.ordre - b.ordre);
+        }, [q, phase]);
+
+        const grouped = useMemo(() => {
+          const map = new Map();
+          for (const item of filtered) {
+            if (!map.has(item.phase)) map.set(item.phase, []);
+            map.get(item.phase).push(item);
+          }
+          return Array.from(map.entries()).sort(
+            (a, b) =>
+              PHASES_2NDE.findIndex((p) => p.key === a[0]) -
+              PHASES_2NDE.findIndex((p) => p.key === b[0])
+          );
+        }, [filtered]);
+
+        const printPage = () => window.print();
+
+        return (
+          <div className="mx-auto max-w-7xl p-6">
+            <header className="mb-6 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+              <div>
+                <h3 className="text-2xl font-semibold tracking-tight">
+                  Film annuel de l'orientation — 2nde
+                </h3>
+                <p className="text-sm text-slate-600">
+                  LFJP · Parcours Avenir · Année scolaire 2025‑2026
+                </p>
+              </div>
+              <div className="flex flex-wrap items-center gap-2">
+                <div className="flex items-center gap-2">
+                  <label className="text-sm text-slate-600" htmlFor="view-2nde">
+                    Vue
+                  </label>
+                  <select
+                    id="view-2nde"
+                    value={view}
+                    onChange={(e) => setView(e.target.value)}
+                    className="rounded-xl border px-3 py-2 text-sm"
+                  >
+                    <option value="timeline">Timeline</option>
+                    <option value="table">Tableau</option>
+                  </select>
+                </div>
+                <div className="flex items-center gap-2">
+                  <label className="text-sm text-slate-600" htmlFor="phase-2nde">
+                    Phase
+                  </label>
+                  <select
+                    id="phase-2nde"
+                    value={phase}
+                    onChange={(e) => setPhase(e.target.value)}
+                    className="rounded-xl border px-3 py-2 text-sm"
+                  >
+                    <option value="all">Toutes</option>
+                    {PHASES_2NDE.map((p) => (
+                      <option key={p.key} value={p.key}>
+                        {p.key}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                <input
+                  type="search"
+                  placeholder="Rechercher titre, période, acteurs..."
+                  value={q}
+                  onChange={(e) => setQ(e.target.value)}
+                  className="w-64 rounded-xl border px-3 py-2 text-sm"
+                />
+                <button
+                  onClick={printPage}
+                  className="rounded-xl border px-3 py-2 text-sm hover:bg-slate-50"
+                >
+                  Imprimer / PDF
+                </button>
+              </div>
+            </header>
+
+            {view === "timeline" ? (
+              <Timeline2nde grouped={grouped} phases={PHASES_2NDE} />
+            ) : (
+              <TableView2nde rows={filtered} />
+            )}
+
+            <footer className="mt-8 border-t pt-4 text-xs text-slate-500">
+              Données issues du canevas Parcours Avenir 2nde. Dernière mise à jour: {" "}
+              {new Date().toISOString().slice(0, 10)}.
+            </footer>
+          </div>
+        );
+      }
+
+      function Timeline({ grouped, phases }) {
         return (
           <div className="space-y-10">
             {grouped.map(([title, items]) => {
-              const phaseMeta = PHASES.find((p) => p.key === title);
+              const phaseMeta = phases.find((p) => p.key === title);
               return (
                 <section key={title} className="rounded-3xl border border-slate-200 bg-white/70 p-6 shadow-sm">
                   <h4 className="mb-4 text-lg font-semibold text-slate-900">{title}</h4>
@@ -528,6 +847,46 @@
                             </div>
                             <p className="mt-2 text-sm text-slate-700">{it.details}</p>
                             <div className="mt-3 flex flex-wrap gap-2 text-xs text-slate-600">
+                              <Badge icon="users" label={it.acteurs.join(", ")} />
+                              <Badge icon="map-pin" label={it.lieu} />
+                              <Badge icon="flag" label={it.phase} />
+                            </div>
+                          </article>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </section>
+              );
+            })}
+          </div>
+        );
+      }
+
+      function Timeline2nde({ grouped, phases }) {
+        return (
+          <div className="flex flex-col gap-8">
+            {grouped.map(([title, items]) => {
+              const phaseMeta = phases.find((p) => p.key === title);
+              return (
+                <section key={title}>
+                  <h2 className="mb-3 text-lg font-semibold">{title}</h2>
+                  <div className="relative pl-6">
+                    <div className="absolute left-2 top-0 h-full w-px bg-slate-200" aria-hidden />
+                    <ul className="space-y-4">
+                      {items.map((it) => (
+                        <li key={it.id} className="relative">
+                          <div
+                            className="absolute -left-1.5 top-2 h-3 w-3 rounded-full bg-white ring-2 ring-slate-300"
+                            aria-hidden
+                          />
+                          <article className={classNames("rounded-2xl border p-4", phaseMeta?.color)}>
+                            <div className="flex flex-wrap items-baseline justify-between gap-2">
+                              <h3 className="font-medium">{it.titre}</h3>
+                              <span className="text-xs text-slate-700">{it.periode}</span>
+                            </div>
+                            <p className="mt-1 text-sm text-slate-700">{it.details}</p>
+                            <div className="mt-2 flex flex-wrap gap-2 text-xs text-slate-600">
                               <Badge icon="users" label={it.acteurs.join(", ")} />
                               <Badge icon="map-pin" label={it.lieu} />
                               <Badge icon="flag" label={it.phase} />
@@ -575,9 +934,43 @@
         );
       }
 
+      function TableView2nde({ rows }) {
+        return (
+          <div className="overflow-hidden rounded-2xl border">
+            <table className="min-w-full divide-y divide-slate-200">
+              <thead className="bg-slate-50">
+                <tr>
+                  <Th>Phase</Th>
+                  <Th>Période</Th>
+                  <Th>Titre</Th>
+                  <Th>Détails</Th>
+                  <Th>Acteurs</Th>
+                  <Th>Lieu</Th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-100 bg-white">
+                {rows.map((r) => (
+                  <tr key={r.id} className="hover:bg-slate-50">
+                    <Td className="whitespace-nowrap text-slate-700">{r.phase}</Td>
+                    <Td className="whitespace-nowrap text-slate-700">{r.periode}</Td>
+                    <Td className="font-medium">{r.titre}</Td>
+                    <Td className="text-slate-700">{r.details}</Td>
+                    <Td className="text-slate-700">{r.acteurs.join(", ")}</Td>
+                    <Td className="text-slate-700">{r.lieu}</Td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        );
+      }
+
       function Th({ children }) {
         return (
-          <th className="px-4 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-slate-600">
+          <th
+            scope="col"
+            className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-slate-600"
+          >
             {children}
           </th>
         );
@@ -625,6 +1018,12 @@
       if (rootElement) {
         const root = ReactDOM.createRoot(rootElement);
         root.render(<Orientation3e />);
+      }
+
+      const root2ndeElement = document.getElementById("film-annuel-2nde-root");
+      if (root2ndeElement) {
+        const root2nde = ReactDOM.createRoot(root2ndeElement);
+        root2nde.render(<Orientation2nde />);
       }
     </script>
   </body>
