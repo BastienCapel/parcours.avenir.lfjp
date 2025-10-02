@@ -159,6 +159,22 @@ export const DATA_3E = [
     acteurs: ["Équipe pédagogique", "PP", "PRIO"],
     lieu: "LFJP / Extérieurs",
   },
+  {
+    id: "immersion-arts-numerique",
+    phase: "Plonger dans le monde professionnel",
+    titre: "Immersion « arts et métiers du numérique » + expo Les Manèges",
+    details:
+      "Sortie pédagogique co-portée par Eve Capel et Roselyne D’Aquino : visite d’un Institut supérieur des arts et des métiers du Numérique à Dakar puis visite d’une exposition à la galerie Les Manèges. Objectif : découverte des métiers de l’art et du numérique, liens formation-emploi, ouverture culturelle.",
+    periode: "T2 2025‑2026 (à confirmer)",
+    ordre: 20260205,
+    acteurs: [
+      "Eve Capel",
+      "Roselyne D’Aquino",
+      "Galerie Les Manèges",
+      "Entreprises/écoles locales",
+    ],
+    lieu: "Dakar — Institut supérieur des arts et des métiers du Numérique & Galerie Les Manèges",
+  },
 
   // Finaliser les projets
   {
