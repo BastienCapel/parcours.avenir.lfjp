@@ -397,7 +397,7 @@
       id: "powerpoint-choisir-bac",
       phase: "Conna\xEEtre les voies post\u20112de",
       titre: "Ressource: \u2018Apr\xE8s la 2de, choisir son bac et ses sp\xE9cialit\xE9s\u2019",
-      details: "Appui pour comprendre la voie g\xE9n\xE9rale et la s\xE9rie STMG.",
+      details: "Appui pour comprendre la voie g\xE9n\xE9rale et la voie technologique.",
       periode: "Novembre",
       ordre: 20251114,
       acteurs: ["PRIO", "PP"],

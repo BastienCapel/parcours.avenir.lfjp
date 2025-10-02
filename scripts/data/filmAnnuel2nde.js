@@ -13,7 +13,7 @@ export const DATA_2NDE = [
     id: "powerpoint-choisir-bac",
     phase: "Connaître les voies post‑2de",
     titre: "Ressource: ‘Après la 2de, choisir son bac et ses spécialités’",
-    details: "Appui pour comprendre la voie générale et la série STMG.",
+    details: "Appui pour comprendre la voie générale et la voie technologique.",
     periode: "Novembre",
     ordre: 20251114,
     acteurs: ["PRIO", "PP"],
