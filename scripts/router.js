@@ -123,4 +123,64 @@ function initMobileMenu() {
 document.addEventListener("DOMContentLoaded", () => {
   initRouting();
   initMobileMenu();
+  initOnisepAccessToggle();
 });
+
+function initOnisepAccessToggle() {
+  const toggle = document.querySelector("[data-onisep-toggle]");
+  const panel = document.querySelector("[data-onisep-panel]");
+  const closeButton = document.querySelector("[data-onisep-close]");
+
+  if (!toggle || !panel) {
+    return;
+  }
+
+  const setExpandedState = (isExpanded) => {
+    toggle.setAttribute("aria-expanded", String(isExpanded));
+    panel.classList.toggle("hidden", !isExpanded);
+    toggle.classList.toggle("bg-rose-50", isExpanded);
+    toggle.classList.toggle("border-rose-300", isExpanded);
+    toggle.classList.toggle("text-rose-700", isExpanded);
+  };
+
+  const handleToggle = () => {
+    const isExpanded = toggle.getAttribute("aria-expanded") === "true";
+    setExpandedState(!isExpanded);
+  };
+
+  const handleClose = () => {
+    setExpandedState(false);
+    toggle.focus();
+  };
+
+  const handleKeyDown = (event) => {
+    if (event.key === "Escape") {
+      const isExpanded = toggle.getAttribute("aria-expanded") === "true";
+      if (isExpanded) {
+        event.preventDefault();
+        handleClose();
+      }
+    }
+  };
+
+  toggle.addEventListener("click", handleToggle);
+  toggle.addEventListener("keydown", handleKeyDown);
+
+  if (closeButton) {
+    closeButton.addEventListener("click", handleClose);
+  }
+
+  document.addEventListener("click", (event) => {
+    const target = event.target instanceof Element ? event.target : null;
+    const isExpanded = toggle.getAttribute("aria-expanded") === "true";
+    if (!isExpanded || !target) {
+      return;
+    }
+    if (target.closest("[data-onisep-panel]") || target.closest("[data-onisep-toggle]")) {
+      return;
+    }
+    setExpandedState(false);
+  });
+
+  setExpandedState(false);
+}

@@ -158,6 +158,15 @@
                 >
                   Film annuel Terminale
                 </a>
+                <button
+                  type="button"
+                  data-onisep-toggle
+                  aria-controls="onisep-access-panel"
+                  aria-expanded="false"
+                  class="inline-flex items-center gap-2 rounded-full border border-rose-200 px-5 py-2.5 text-sm font-semibold text-rose-600 shadow-sm transition hover:border-rose-300 hover:text-rose-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-400"
+                >
+                  Abonnement ONISEP
+                </button>
                 <a
                   href="https://eduscol.education.fr/794/orientation?utm"
                   target="_blank"
@@ -167,8 +176,58 @@
                   Ressources nationales
                   <span aria-hidden="true">→</span>
                 </a>
-              </div>
             </div>
+            <div
+              id="onisep-access-panel"
+              data-onisep-panel
+              class="mt-6 hidden max-w-xl rounded-3xl border border-rose-100 bg-white/90 p-6 text-sm text-slate-700 shadow-sm"
+            >
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <p class="text-xs font-semibold uppercase tracking-wide text-rose-500">Accès kiosque ONISEP</p>
+                  <h2 class="mt-1 text-lg font-semibold text-slate-900">Paramètres de connexion pour les élèves du LFJP</h2>
+                  <p class="mt-3 text-sm text-slate-600">
+                    Utilisez ces identifiants pour consulter les ressources du kiosque ONISEP et préparer votre projet d'orientation.
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  class="rounded-full border border-transparent p-1 text-slate-400 transition hover:text-slate-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-400"
+                  data-onisep-close
+                  aria-label="Fermer les paramètres de connexion ONISEP"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="h-5 w-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+              <dl class="mt-4 space-y-3">
+                <div>
+                  <dt class="text-xs font-medium uppercase tracking-wide text-slate-500">Adresse</dt>
+                  <dd>
+                    <a
+                      href="https://kiosque.onisep.fr"
+                      target="_blank"
+                      rel="noreferrer"
+                      class="font-semibold text-sky-600 hover:text-sky-700"
+                    >
+                      https://kiosque.onisep.fr
+                    </a>
+                  </dd>
+                </div>
+                <div class="flex flex-wrap gap-8">
+                  <div>
+                    <dt class="text-xs font-medium uppercase tracking-wide text-slate-500">Login</dt>
+                    <dd class="font-mono text-base font-semibold text-slate-900">3410017R</dd>
+                  </div>
+                  <div>
+                    <dt class="text-xs font-medium uppercase tracking-wide text-slate-500">Mot de passe</dt>
+                    <dd class="font-mono text-base font-semibold text-slate-900">ufr4dnVh@</dd>
+                  </div>
+                </div>
+              </dl>
+            </div>
+          </div>
             <aside class="space-y-6 rounded-3xl border border-slate-200 bg-white/80 p-6 shadow-sm">
               <h2 class="text-base font-semibold text-slate-900">Points de contact</h2>
               <ul class="space-y-4 text-sm text-slate-600">
