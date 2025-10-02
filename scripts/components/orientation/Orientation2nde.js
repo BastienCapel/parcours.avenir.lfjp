@@ -23,36 +23,58 @@ export function Orientation2nde() {
     <div className="mx-auto max-w-7xl space-y-6 p-6">
       <header className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
         <div className="bg-gradient-to-r from-sky-50 via-white to-emerald-50 px-6 py-6">
-          <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-            <div className="flex items-start gap-3">
-              <img
-                src="https://i.imgur.com/0YmGlXO.png"
-                alt="Logo du Lycée Français Jacques Prévert de Saly"
-                className="h-14 w-auto"
-                loading="lazy"
-                width="96"
-                height="96"
-              />
-              <div className="space-y-1">
-                <h3 className="text-2xl font-semibold tracking-tight text-slate-900">
-                  Film annuel de l'orientation — 2nde
-                </h3>
-                <p className="text-sm text-slate-600">LFJP · Parcours Avenir · Année scolaire 2025‑2026</p>
-                <div className="flex flex-wrap gap-2 text-xs font-medium text-slate-500">
-                  <span className="inline-flex items-center gap-1 rounded-full bg-white/80 px-3 py-1 shadow-sm">
-                    <span className="h-2 w-2 rounded-full bg-sky-500" aria-hidden="true" />
-                    {phasesCount} phases
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+            <div className="flex flex-col gap-5">
+              <div className="flex flex-wrap items-center gap-4 sm:gap-6">
+                <img
+                  src="https://i.imgur.com/0YmGlXO.png"
+                  alt="Logo du Lycée Français Jacques Prévert de Saly"
+                  className="h-14 w-auto"
+                  loading="lazy"
+                  width="96"
+                  height="96"
+                />
+                <span className="hidden h-14 w-px bg-gradient-to-b from-transparent via-sky-200 to-transparent sm:block" />
+                <div className="flex items-center gap-4">
+                  <span className="flex h-16 w-16 items-center justify-center rounded-2xl bg-sky-500 text-3xl font-bold text-white shadow-lg shadow-sky-200">
+                    2nde
                   </span>
-                  <span className="inline-flex items-center gap-1 rounded-full bg-white/80 px-3 py-1 shadow-sm">
-                    <span className="h-2 w-2 rounded-full bg-emerald-500" aria-hidden="true" />
-                    {totalActions} actions planifiées
+                  <div className="space-y-1">
+                    <p className="text-xs font-semibold uppercase tracking-widest text-sky-600">Film annuel de l'orientation</p>
+                    <h3 className="text-3xl font-bold text-slate-900 sm:text-4xl">Classe de 2nde</h3>
+                    <p className="text-sm text-slate-600">LFJP · Parcours Avenir · Année scolaire 2025‑2026</p>
+                  </div>
+                </div>
+              </div>
+              <div className="grid gap-3 text-sm sm:grid-cols-2">
+                <div className="flex items-center gap-3 rounded-2xl bg-white/80 px-4 py-3 shadow-sm backdrop-blur">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-sky-100 text-sky-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-5 w-5">
+                      <path d="M11 3a1 1 0 0 0-2 0v1.382a3 3 0 0 0-1.447.829l-.978-.326a1 1 0 1 0-.632 1.898l.978.326a3.001 3.001 0 0 0 0 1.782l-.978.326a1 1 0 1 0 .632 1.898l.978-.326A3 3 0 0 0 9 11.618V13a1 1 0 1 0 2 0v-1.382a3 3 0 0 0 1.447-.829l.978.326a1 1 0 1 0 .632-1.898l-.978-.326a3 3 0 0 0 0-1.782l.978-.326a1 1 0 0 0-.632-1.898l-.978.326A3 3 0 0 0 11 4.382V3Z" />
+                    </svg>
                   </span>
+                  <div>
+                    <p className="text-xs font-medium uppercase tracking-wide text-slate-500">Phases</p>
+                    <p className="text-lg font-semibold text-slate-900">{phasesCount}</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 rounded-2xl bg-white/80 px-4 py-3 shadow-sm backdrop-blur">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-100 text-emerald-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-5 w-5">
+                      <path d="M4 5a2 2 0 0 1 2-2h1.5a.5.5 0 0 1 .4.2l1.1 1.6h5a2 2 0 0 1 2 2v1H4V5Z" />
+                      <path d="M4 9h12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9Z" />
+                    </svg>
+                  </span>
+                  <div>
+                    <p className="text-xs font-medium uppercase tracking-wide text-slate-500">Actions planifiées</p>
+                    <p className="text-lg font-semibold text-slate-900">{totalActions}</p>
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="rounded-2xl border border-white/60 bg-white/70 px-4 py-3 text-sm text-slate-600 shadow-sm backdrop-blur">
-              <p className="font-medium text-slate-700">Objectif</p>
-              <p className="leading-tight">
+            <div className="max-w-md rounded-2xl border border-white/60 bg-white/80 px-5 py-4 text-sm text-slate-600 shadow-sm backdrop-blur">
+              <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Objectif</p>
+              <p className="mt-1 leading-relaxed text-slate-700">
                 Visualisez et filtrez toutes les actions prévues pour accompagner l'orientation des élèves de seconde.
               </p>
             </div>
